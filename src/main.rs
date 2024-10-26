@@ -13,19 +13,22 @@ impl Philosopher {
     }
 
     fn eat(&self) {
-        println!("{} начала есть.", self.name);
+        println!("{} started eating.", self.name);
         thread::sleep(Duration::from_millis(1000));
-        println!("{} закончила есть.", self.name);
+        println!("{} finished eating.", self.name);
     }
 }
 
 fn main() {
     let philosophers = vec![
-        Philosopher::new("Джудит Батлер"),
-        Philosopher::new("Рая Дунаевская"),
-        Philosopher::new("Зарубина Наталья"),
-        Philosopher::new("Эмма Гольдман"),
-        Philosopher::new("Анна Шмидт"),
+        Philosopher::new("Aristotle"),
+        Philosopher::new("Friedrich Nietzsche"),
+        Philosopher::new("Immanuel Kant"),
+        Philosopher::new("Socrates"),
+        Philosopher::new("Thomas Aquinas"),
+        Philosopher::new("David Hume"),
+        Philosopher::new("John Locke"),
+        Philosopher::new("Plato"),
     ];
 
     let handles: Vec<_> = philosophers.into_iter().map(|p|{
